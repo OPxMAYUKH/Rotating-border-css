@@ -1,0 +1,59 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing:border-box;
+}
+body{
+    background: #232923;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.main-card{
+    position: relative;
+    text-align: center;
+    background-color: #232923;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;   
+}
+
+.main-card::after{
+    position: absolute;
+    content: '';
+    height: 150%;
+    width: 150%;
+    left: -25%;
+    top: -25%;
+    background: conic-gradient(
+        transparent 0deg,
+        #25ffde 180deg,
+        transparent 180deg,
+        #26ffde 360deg
+    );
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.main-card::before{
+    content: '';
+    background: #232923;
+    inset: 10px;
+    position: absolute;
+    z-index: 2;
+}
+.content{
+    position: relative;
+    z-index: 3;
+    font-weight: 200;
+}
